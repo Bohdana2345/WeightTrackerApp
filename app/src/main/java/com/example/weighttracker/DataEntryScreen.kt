@@ -12,7 +12,6 @@ import android.widget.Toast
 import kotlin.math.roundToInt
 import java.util.Date
 import java.util.Locale
-import java.util.TimeZone
 
 class DataEntryScreen : AppCompatActivity() {
     private lateinit var binding: ActivityDataEntryScreenBinding
@@ -48,10 +47,7 @@ class DataEntryScreen : AppCompatActivity() {
         binding.button.setOnClickListener {
             val weight = decimalValues[numberPicker.value].toDouble()
             val roundedWeight = ((weight * 10).roundToInt() / 10.0)
-            val timeZone = TimeZone.getDefault()
-            val dateWithoutTimeZone = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault())
-            dateWithoutTimeZone.timeZone = timeZone
-            val date = dateWithoutTimeZone.format(Date())
+            val date = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault()).format(Date())
             val newRecord = WeightRecord(weight = roundedWeight, date = date)
             lifecycleScope.launch {
                 MyApp.database.weightRecordDao().insertWeightRecord(newRecord)

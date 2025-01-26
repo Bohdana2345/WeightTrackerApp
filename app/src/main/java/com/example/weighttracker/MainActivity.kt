@@ -1,5 +1,4 @@
 package com.example.weighttracker
-import android.util.Log
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
@@ -29,7 +28,6 @@ class MainActivity : ComponentActivity() {
 
         recordsViewModel = ViewModelProvider(this)[RecordsViewModel::class.java]
         recordsViewModel.allRecords.observe(this) { records ->
-            Log.d("MainActivity", "Received records: ${records.size}")
             recordAdapter.updateRecords(records)
             if (records.isEmpty()) {
                 binding.recyclerView.visibility = View.GONE
@@ -42,7 +40,6 @@ class MainActivity : ComponentActivity() {
             val intent = Intent(this, DataEntryScreen::class.java)
             startActivity(intent)
         }
-
     }
 }
 
