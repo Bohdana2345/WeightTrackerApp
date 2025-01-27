@@ -1,6 +1,7 @@
 package com.example.weighttracker
 import android.app.Application
 import androidx.room.Room
+import com.example.weighttracker.data.AppDatabase
 
 class MyApp : Application() {
     companion object {
