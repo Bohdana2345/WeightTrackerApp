@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.weighttracker.app-mergeDebugResources-58:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.example.weighttracker.app-mergeDebugResources-64:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\HP\\.gradle\\caches\\8.10.2\\transforms\\fe759ccf1665ce0fa483f835044f7255\\transformed\\appcompat-1.7.0\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\8.10.2\\transforms\\fe2112b3ba7d3cb5771887e63077ed22\\transformed\\appcompat-1.7.0\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

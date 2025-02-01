@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
 import androidx.room.CoroutinesRoom;
+import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
@@ -33,6 +34,8 @@ public final class WeightRecordDao_Impl implements WeightRecordDao {
 
   private final EntityInsertionAdapter<WeightRecord> __insertionAdapterOfWeightRecord;
 
+  private final EntityDeletionOrUpdateAdapter<WeightRecord> __deletionAdapterOfWeightRecord;
+
   public WeightRecordDao_Impl(@NonNull final RoomDatabase __db) {
     this.__db = __db;
     this.__insertionAdapterOfWeightRecord = new EntityInsertionAdapter<WeightRecord>(__db) {
@@ -58,6 +61,19 @@ public final class WeightRecordDao_Impl implements WeightRecordDao {
         }
       }
     };
+    this.__deletionAdapterOfWeightRecord = new EntityDeletionOrUpdateAdapter<WeightRecord>(__db) {
+      @Override
+      @NonNull
+      protected String createQuery() {
+        return "DELETE FROM `weight_records` WHERE `id` = ?";
+      }
+
+      @Override
+      protected void bind(@NonNull final SupportSQLiteStatement statement,
+          @NonNull final WeightRecord entity) {
+        statement.bindLong(1, entity.getId());
+      }
+    };
   }
 
   @Override
@@ -77,6 +93,18 @@ public final class WeightRecordDao_Impl implements WeightRecordDao {
         }
       }
     }, $completion);
+  }
+
+  @Override
+  public void deleteRecord(final WeightRecord record) {
+    __db.assertNotSuspendingTransaction();
+    __db.beginTransaction();
+    try {
+      __deletionAdapterOfWeightRecord.handle(record);
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+    }
   }
 
   @Override

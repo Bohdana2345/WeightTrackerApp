@@ -588,6 +588,7 @@ attr font
 attr fontFamily
 attr fontProviderAuthority
 attr fontProviderCerts
+attr fontProviderFallbackQuery
 attr fontProviderFetchStrategy
 attr fontProviderFetchTimeout
 attr fontProviderPackage
@@ -1390,6 +1391,7 @@ color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
 color custom_bg_color
+color data_entry_screen_page_bg
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -2104,7 +2106,6 @@ color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
 color purple_200
-color purple_500
 color purple_700
 color ripple_material_dark
 color ripple_material_light
@@ -2208,6 +2209,7 @@ dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen add_button_width
 dimen appcompat_dialog_background_inset
+dimen border_radius
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -2219,6 +2221,7 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
+dimen data_entry_headline_line_height
 dimen data_entry_headline_text_size
 dimen data_entry_save_button_text_size
 dimen data_entry_units_margin_start
@@ -2228,6 +2231,7 @@ dimen date_padding_bottom_text
 dimen date_padding_end_text
 dimen date_padding_start_text
 dimen def_drawer_elevation
+dimen delete_button_padding
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
 dimen design_bottom_navigation_active_item_min_width
@@ -2291,6 +2295,7 @@ dimen hint_pressed_alpha_material_light
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
+dimen line_height
 dimen m3_alert_dialog_action_bottom_padding
 dimen m3_alert_dialog_action_top_padding
 dimen m3_alert_dialog_corner_size
@@ -2679,6 +2684,7 @@ dimen m3_sys_state_pressed_state_layer_opacity
 dimen m3_timepicker_display_stroke_width
 dimen m3_timepicker_window_elevation
 dimen m3_toolbar_text_size_title
+dimen main_headline_line_height
 dimen main_screen_headline_ll_margin_top
 dimen main_screen_headline_ll_width
 dimen main_screen_headline_padding_start
@@ -2943,17 +2949,30 @@ dimen notification_top_pad
 dimen notification_top_pad_large_text
 dimen number_picker_height
 dimen number_picker_width
+dimen output_field_padding
 dimen padding_bottom_add_button
+dimen padding_bottom_headline
 dimen padding_end_add_button
+dimen padding_end_weight_unit
 dimen padding_start_add_button
+dimen padding_start_weight_unit
 dimen padding_top_add_button
 dimen record_block_width
+dimen record_border_width
+dimen record_item_text_size
 dimen record_text_size_date
 dimen record_text_size_weight
+dimen save_button_corner_radius
+dimen save_button_height
 dimen save_button_padding_bottom
 dimen save_button_padding_end
 dimen save_button_padding_start
 dimen save_button_padding_top
+dimen save_button_width
+dimen spacing_between_elements
+dimen spacing_between_textfield_picker
+dimen text_field_font_size
+dimen text_field_width
 dimen text_size_add_button
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
@@ -3096,7 +3115,6 @@ drawable m3_tabs_background
 drawable m3_tabs_line_indicator
 drawable m3_tabs_rounded_line_indicator
 drawable m3_tabs_transparent_background
-drawable main_rounded_corner
 drawable main_screen_bg
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
@@ -3159,9 +3177,6 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-drawable record_border
-drawable recycler_view_border
-drawable rounded_corner
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3256,8 +3271,6 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id axisRelative
-id b_add_record
-id b_save_weight
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3287,8 +3300,6 @@ id checkbox
 id checked
 id chronometer
 id circle_center
-id cl_record_block
-id cl_weight_block
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -3385,6 +3396,7 @@ id group_divider
 id grouping
 id groups
 id header_title
+id hide_graphics_layer_in_inspector_tag
 id hide_ime_id
 id hide_in_inspector_tag
 id hideable
@@ -3422,7 +3434,6 @@ id linear
 id listMode
 id list_item
 id m3_side_sheet
-id main
 id marquee
 id masked
 id match_constraint
@@ -3500,7 +3511,6 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
-id np_weight_input
 id off
 id on
 id onInterceptTouchReturnSwipe
@@ -3550,7 +3560,6 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
-id rv_records_list
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3661,9 +3670,6 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id tv_date_output
-id tv_weight_output
-id tv_weight_unit
 id unchecked
 id uniform
 id unlabeled
@@ -3803,8 +3809,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_data_entry_screen
-layout activity_main
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3823,7 +3827,6 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
-layout item_record
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3969,62 +3972,6 @@ string m3_sys_motion_easing_linear
 string m3_sys_motion_easing_standard
 string m3_sys_motion_easing_standard_accelerate
 string m3_sys_motion_easing_standard_decelerate
-string m3c_bottom_sheet_collapse_description
-string m3c_bottom_sheet_dismiss_description
-string m3c_bottom_sheet_drag_handle_description
-string m3c_bottom_sheet_expand_description
-string m3c_bottom_sheet_pane_title
-string m3c_date_input_headline
-string m3c_date_input_headline_description
-string m3c_date_input_invalid_for_pattern
-string m3c_date_input_invalid_not_allowed
-string m3c_date_input_invalid_year_range
-string m3c_date_input_label
-string m3c_date_input_no_input_description
-string m3c_date_input_title
-string m3c_date_picker_headline
-string m3c_date_picker_headline_description
-string m3c_date_picker_navigate_to_year_description
-string m3c_date_picker_no_selection_description
-string m3c_date_picker_scroll_to_earlier_years
-string m3c_date_picker_scroll_to_later_years
-string m3c_date_picker_switch_to_calendar_mode
-string m3c_date_picker_switch_to_day_selection
-string m3c_date_picker_switch_to_input_mode
-string m3c_date_picker_switch_to_next_month
-string m3c_date_picker_switch_to_previous_month
-string m3c_date_picker_switch_to_year_selection
-string m3c_date_picker_title
-string m3c_date_picker_today_description
-string m3c_date_picker_year_picker_pane_title
-string m3c_date_range_input_invalid_range_input
-string m3c_date_range_input_title
-string m3c_date_range_picker_day_in_range
-string m3c_date_range_picker_end_headline
-string m3c_date_range_picker_scroll_to_next_month
-string m3c_date_range_picker_scroll_to_previous_month
-string m3c_date_range_picker_start_headline
-string m3c_date_range_picker_title
-string m3c_dialog
-string m3c_dropdown_menu_collapsed
-string m3c_dropdown_menu_expanded
-string m3c_search_bar_search
-string m3c_snackbar_dismiss
-string m3c_suggestions_available
-string m3c_time_picker_am
-string m3c_time_picker_hour
-string m3c_time_picker_hour_24h_suffix
-string m3c_time_picker_hour_selection
-string m3c_time_picker_hour_suffix
-string m3c_time_picker_hour_text_field
-string m3c_time_picker_minute
-string m3c_time_picker_minute_selection
-string m3c_time_picker_minute_suffix
-string m3c_time_picker_minute_text_field
-string m3c_time_picker_period_toggle_description
-string m3c_time_picker_pm
-string m3c_tooltip_long_press_label
-string m3c_tooltip_pane_description
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_24h_suffix
@@ -4111,8 +4058,6 @@ string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
 string navigation_menu
 string not_selected
-string off
-string on
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -4127,6 +4072,9 @@ string searchview_navigation_content_description
 string selected
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
+string state_empty
+string state_off
+string state_on
 string status_bar_notification_info_overflow
 string switch_role
 string tab
@@ -5321,7 +5269,7 @@ styleable ExtendedFloatingActionButton_Behavior_Layout behavior_autoHide behavio
 styleable FloatingActionButton android_enabled backgroundTint backgroundTintMode borderWidth elevation ensureMinTouchTargetSize fabCustomSize fabSize hideMotionSpec hoveredFocusedTranslationZ maxImageSize pressedTranslationZ rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec useCompatPadding
 styleable FloatingActionButton_Behavior_Layout behavior_autoHide
 styleable FlowLayout itemSpacing lineSpacing
-styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery fontProviderSystemFontFamily
+styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFallbackQuery fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery fontProviderSystemFontFamily
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
 styleable Fragment android_name android_id android_tag

@@ -2,7 +2,7 @@
     <string name="app_name">WeightTracker</string>
     <string name="log_weight_journey">Log Your Weight Journey!</string>
     <string name="weight_unit">kg</string>
-    <string name="add">Add</string>
+    <string name="add">ADD</string>
     <string name="track_weight_text">Track your weight with ease!</string>
     <string name="weight">Weight</string>
     <string name="date">Date</string>

@@ -43,8 +43,6 @@ android {
         jvmTarget = "11"
     }
 
-    // Removed testOptions block
-    // Removed emulatorSnapshots configuration as it's related to test instrumentation
 }
 
 dependencies {
@@ -55,21 +53,28 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-
-    // Removed test dependencies
-    // Removed androidTestImplementation related to tests (JUnit, Espresso, etc.)
-
+    implementation (libs.androidx.runtime.livedata)
+    implementation (libs.ui)
+    implementation(libs.androidx.core.ktx)
+    implementation (libs.androidx.constraintlayout.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.activity.compose)
     debugImplementation(libs.androidx.ui.tooling)
-
-
     implementation(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.constraintlayout.v210)
     implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.material)
+    implementation(libs.material)
+    implementation(libs.ui)
+    implementation(libs.androidx.material.icons.extended)
+    implementation (libs.androidx.foundation)
+    implementation(libs.numberpicker)
+
 }
